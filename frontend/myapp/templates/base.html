@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INICIO</title>
+    <link rel="stylesheet" href="{% static '/styles/base.css' %}" type="text/css">
+</head>
+<body>
+    <nav>
+        <div class="logo" ><a href="http://127.0.0.1:8000/">Proyecto No.3</a></div>
+        <ul class="nav-links">
+          <li><a href="/limpiarDatos">Resetear Datos</a></li>
+          <li><a href="/grabarMensajes">Cargar archivo de mensajes</a></li>
+          <li><a href="/grabarConfiguracion">Cargar archivo de configuracion</a></li>
+          <li><a href="/peticiones">Peticiones</a></li>
+        </ul>
+      </nav>
+
+      {% block content %}
+      {% endblock %}
+</body>
+</html>

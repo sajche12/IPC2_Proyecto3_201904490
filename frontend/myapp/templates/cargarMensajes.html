@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    
+            h1{
+                text-align: center;
+            }
+    
+            form{
+                text-align: center;
+            }
+    
+            input[type="file"]{
+                width: 20%;
+                margin: 0 auto;
+            }
+    
+            input[type="submit"]{
+                background-color: #008080; /* Color de fondo */
+                color: white; /* Color del texto */
+                padding: 10px 20px; /* Relleno interno */
+                font-size: 16px; /* Tamaño de la fuente */
+                border: none; /* Sin borde */
+                border-radius: 5px; /* Bordes redondeados */
+                cursor: pointer; /* Cambia el cursor al pasar el ratón */
+            }
+
+            input[type="submit"]:hover{
+                background-color: #008080; /* Cambia el color de fondo al pasar el ratón */
+            }
+    </style>
+    <title>CARGAR MENSAJES</title>
+</head>
+<body>
+    <h1>Carga de Mensajes</h1>
+    <form action="http://127.0.0.1:5000/grabarMensajes" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="mensaje">Selecciona el archivo de Mensajes a analizar</label><br><br>
+        <input type="file" id="entrada_mensajes" name="entrada_mensajes" accept="application/xml"><br><br>
+        <input type="submit" value="Cargar Archivo">
+    </form>
+
+</body>
+</html>
+
+{% endblock %}

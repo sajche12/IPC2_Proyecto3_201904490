@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PETICIONES</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            }
+
+        .left-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+            }
+
+        .left-list li {
+            margin-bottom: 10px;
+            }
+
+        .left-list a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            display: block;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            }
+
+        .left-list a:hover {
+            background-color: #eee;
+            }
+        h1 {
+            text-align: center;
+            }
+
+    </style>
+</head>
+<body>
+    <h1>Peticiones</h1>
+    <ul class="left-list">
+        <li><a href="devolverHashtags/">Consultar Hashtags</a></li>
+        <li><a href="devolverMenciones/">Consultar Menciones</a></li>
+        <li><a href="devolverSentimientos/">Consultar Sentimientos</a></li>
+        <li><a href="#">Gráfica</a></li>
+        <li><a href="#">Ayuda</a></li>
+        <!-- Agrega más elementos según sea necesario -->
+    </ul>
+</body>
+</html>
+
+{% endblock %}

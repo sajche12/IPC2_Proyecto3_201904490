@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resetear Datos</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+
+        form{
+            text-align: center;
+        }
+
+        input[type="submit"]{
+            background-color: #008080; /* Color de fondo */
+            color: white; /* Color del texto */
+            padding: 10px 20px; /* Relleno interno */
+            font-size: 16px; /* Tamaño de la fuente */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Bordes redondeados */
+            cursor: pointer; /* Cambia el cursor al pasar el ratón */
+        }
+
+        input[type="submit"]:hover{
+            background-color: #008080; /* Cambia el color de fondo al pasar el ratón */
+        }
+    </style>
+</head>
+<body>
+    <h1>Resetear Datos</h1>
+    <form action="http://127.0.0.1:5000/limpiarDatos" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="mensaje">¿Está seguro que desea resetear los datos?</label><br><br>
+        <input type="submit" value="Resetear Datos">
+    </form>
+</body>
+</html>
+
+{% endblock %}
