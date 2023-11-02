@@ -13,4 +13,5 @@ urlpatterns = [
     path('peticiones/graficas/', views.graficas, name='graficas'),
     path('peticiones/ayuda/', views.ayuda, name='ayuda'),
     path('peticiones/ayuda/informacion/', views.informacion, name='informacion'),
+    path('peticiones/ayuda/abrir_pdf/', views.abrir_pdf, name='abrir_pdf'),
 ]

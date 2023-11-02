@@ -50,8 +50,12 @@
     <h3>Mostrar informacion del estudiante</h3>
     <a href="informacion/" class="boton boton1">Informacion de Estudiante</a><br><br>
     <hr>
-    <h3>Mostrar documentacion</h3>
-    <a href="#" class="boton boton3">Documentacion</a><br><br>
+    <form action="{% url 'abrir_pdf' %}" method="post">
+      {% csrf_token %}
+      <h3>Mostrar documentacion</h3>
+      <a href="abrir_pdf/" class="boton boton3" target="_blank">Documentacion</a><br><br>
+    </form>
+    
 </body>
 </html>
 

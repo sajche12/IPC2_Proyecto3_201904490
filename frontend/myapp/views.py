@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.http import FileResponse
+import os
 import requests
 
 # Create your views here.
@@ -92,5 +94,13 @@ def ayuda(request):
 
 def informacion(request):
     return render(request, 'informacion.html')
-    
+
+def abrir_pdf(request):
+    # obtener la ruta completa del archivo
+    pdf_path = os.path.join('C:\\Users\\ACER\\Documents\\GitHub\\IPC2_Proyecto3_201904490\\Documentacion.pdf')
+    print(f"pdf_path: {pdf_path}")
+    # abrir el archivo en modo binario
+    pdf = open(pdf_path, 'rb')
+    # retornar el archivo
+    return FileResponse(pdf, content_type='application/pdf')
     
