@@ -30,6 +30,13 @@
     tr:hover {
       background-color: #f5f5f5;
     }
+    .contador{
+        float: left;
+        margin-left: 20px;
+    }
+    .hashtags{
+        float: left;
+    }
     </style>
 </head>
 <body>
@@ -49,19 +56,16 @@
         <label>Hashtags encontrados en la fecha: <strong>{{ fecha_analizar }}</strong></label>
         <br>
         <br>
-        <table>
-            <tr>
-                <th>Hashtag</th>
-                <th>Cantidad de Mensajes</th>
-            </tr>
-            <tr>
-                {% for i in hashtags %}
-                    <td>
-                        {{ i }}
-                    </td>
-                {% endfor %}
-            </tr>
-        </table>
+        <div class="hashtags">
+            {% for i in hashtags %}
+                <p>{{ i }}: </p>
+            {% endfor %}
+        </div>
+        <div class="contador">
+            {% for j in contador %}
+                <p>{{ j }} mensajes</p>
+            {% endfor %}
+        </div>
     {% endif %}
 </body>
 </html>

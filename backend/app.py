@@ -172,7 +172,7 @@ def devolverMenciones():
         i['cantidad'] = contador
         contador = 0
     
-    return jsonify({'resultado': 'ok'})
+    return datos_menciones
 
 @app.route('/devolverSentimientos', methods=['GET'])
 def devolverSentimientos():
@@ -218,7 +218,7 @@ def devolverSentimientos():
         i['cantidad'] = contador
         contador = 0
         
-    return jsonify({'resultado': 'ok'})
+    return datos_sentimientos
      
 
 if __name__ == '__main__':

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONSULTAR SENTIMIENTOS</title>
+    <style>
+        body {
+      font-family: 'Arial', sans-serif;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+    </style>
+</head>
+<body>
+    <h1>Consultar Sentimientos</h1>
+    <form method="get" action="{% url 'devolverSentimientos' %}">
+        {% csrf_token %}
+        <label>Seleccione la fecha que quiere consultar:</label>
+        <select name="fecha" id="fecha">
+            {% for i in fechas %}
+            <option value="{{ i }}" name="fecha">{{ i }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Consultar</button>
+    </form>
+    <br>
+    {% if cambio_fecha == True %}
+        <label>Sentimientos encontrados en la fecha: <strong>{{ fecha_analizar }}</strong></label>
+        <br>
+        <br>
+        <p>Mensaje con sentimiento positivo: {{ positivos }} mensajes</p>
+        <p>Mensaje con sentimiento negativo: {{ negativos }} mensajes</p>
+        <p>Mensaje neutros: {{ neutro }} mensajes</p>
+    {% endif %}
+</body>
+</html>
+
+{% endblock %}

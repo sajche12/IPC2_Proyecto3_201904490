@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYUDA</title>
+    <style>
+        .boton {
+          display: inline-block;
+          padding: 10px 20px;
+          font-size: 16px;
+          text-align: center;
+          text-decoration: none;
+          border: 2px solid #3498db;
+          color: #3498db;
+          background-color: white;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s, color 0.3s;
+        }
+    
+        .boton:hover {
+          background-color: #3498db;
+          color: white;
+        }
+    
+        /* Estilos adicionales para los botones individuales */
+        .boton1 {
+          margin-right: 20px;
+        }
+    
+        .boton2 {
+          background-color: #2ecc71;
+          color: white;
+          border-color: #2ecc71;
+        }
+    
+        .boton3 {
+          background-color: #e74c3c;
+          color: white;
+          border-color: #e74c3c;
+        }
+      
+    </style>
+</head>
+<body>
+    <h1>Ayuda</h1>
+    <h3>Mostrar informacion del estudiante</h3>
+    <a href="informacion/" class="boton boton1">Informacion de Estudiante</a><br><br>
+    <hr>
+    <h3>Mostrar documentacion</h3>
+    <a href="#" class="boton boton3">Documentacion</a><br><br>
+</body>
+</html>
+
+{% endblock %}

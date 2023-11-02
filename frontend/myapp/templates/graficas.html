@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRAFICAS</title>
+    <style>
+        
+    
+        .container {
+          text-align: left;
+        }
+    
+        .boton {
+          display: inline-block;
+          padding: 10px 20px;
+          font-size: 16px;
+          text-align: center;
+          text-decoration: none;
+          border: 2px solid #3498db;
+          color: #3498db;
+          background-color: white;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s, color 0.3s;
+        }
+    
+        .boton:hover {
+          background-color: #3498db;
+          color: white;
+        }
+    
+        /* Estilos adicionales para los botones individuales */
+        .boton1 {
+          margin-right: 20px;
+        }
+    
+        .boton2 {
+          background-color: #2ecc71;
+          color: white;
+          border-color: #2ecc71;
+        }
+    
+        .boton3 {
+          background-color: #e74c3c;
+          color: white;
+          border-color: #e74c3c;
+        }
+      </style>
+</head>
+<body>
+    <h1>GRAFICAS</h1>
+    
+    <form action="{% url 'graficas' %}" method="POST">
+        {% csrf_token %}
+        <div class="container">
+            <label>Crear grafico de Hashtags</label><br><br>
+            <a href="#" class="boton boton1">Generar gráfica de Hashtags</a><br><br>
+            <hr>
+            <label>Crear grafico de Menciones</label><br><br>
+            <a href="#" class="boton boton2">Generar gráfica de Menciones</a><br><br>
+            <hr>
+            <label>Crear grafico de Sentimientos</label><br><br>
+            <a href="#" class="boton boton3">Generar gráfica de Sentimientos</a><br><br>
+            <hr>
+        </div>
+    </form>
+    
+</body>
+</html>
+
+{% endblock %}
